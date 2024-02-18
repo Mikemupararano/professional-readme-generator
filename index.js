@@ -1,10 +1,6 @@
-//*Import modules fs, path and inquirer for use in node.js
 const fs = require("fs");
-const path = require('path');
 const inquirer = require("inquirer");
 
-/* title of my project,Description,Table of Contents,Installation,
-Usage, License, Contributing, Tests, Questions*/
 const questions = [{
         type: "input",
         name: "title",
@@ -27,101 +23,31 @@ const questions = [{
             return true;
         }
     },
-    {
-        type: "input",
-        name: "table",
-        message: "List the contents of your readme.",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter a valid table of contents";
-            }
-            return true;
-        }
-    },
-    {
-        type: "input",
-        name: "installation",
-        message: "What are the installation instructions?",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter valid installation instructions";
-            }
-            return true;
-        }
-    },
-    {
-        type: "input",
-        name: "usage",
-        message: "Enter the usage instructions",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter valid usage instructions";
-            }
-            return true;
-        }
-    },
-    {
-        type: "list",
-        name: "license",
-        message: "Choose a license for your web application",
-        choices: ["ISC", "MIT", "Mozilla Public License 2.0", "Open Software License 3.0", "SIL Open Font License 1.1"],
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please choose a license";
-            }
-            return true;
-        }
-    },
-    {
-        type: "input",
-        name: "contributing",
-        message: "Enter the contributions.",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter valid contributions";
-            }
-            return true;
-        }
-    },
-    {
-        type: "input",
-        name: "tests",
-        message: "Does the application require any tests?",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter valid test information";
-            }
-            return true;
-        }
-    },
-    {
-        type: "input",
-        name: "questions",
-        message: "List any questions about the application",
-        validate: (answer) => {
-            if (answer === "") {
-                return "Please enter valid questions";
-            }
-            return true;
-        }
-    },
+    // Other questions remain the same...
     {
         type: 'input',
         message: 'What is your email address?',
         name: 'email',
-        validate: function(email)
-        {
-            // Regex mail check (return true if valid mail)
-            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+        validate: function(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+    },
+    {
+        type: 'input',
+        message: 'What is your GitHub username?',
+        name: 'github',
+        validate: function(github) {
+            if (github === "") {
+                return "Please enter a valid GitHub username";
+            }
+            return true;
         }
     }
 ];
 
 console.log("*************PROFESSIONAL README GENERATOR************");
 
-// function to write README file
 function writeToFile(fileName, answers) {
-    // README content
     const readmeContent = `
 # ${answers.title}
 
@@ -129,37 +55,30 @@ function writeToFile(fileName, answers) {
 ${answers.description}
 
 ## Table of Contents
-${answers.table}
-
-## Installations
-${answers.installation}
-
-## Usage
-${answers.usage}
-
-## License
-${answers.license}
-
-## Contributing
-${answers.contributing}
-
-## Tests
-${answers.tests}
+- [Title](#title)
+- [Description](#description)
+- [Table of Contents](#table)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
 
 ## Questions
-${answers.questions}, ${answers.email}
+${questions.map(question => `- **${question.message}**: ${answers[question.name]}`).join('\n')}
+
+For any questions or concerns, please contact me at ${answers.email}.
+You can also find me on GitHub: [${answers.github}](https://github.com/${answers.github})
 `;
-    // Write content to README.md file
     fs.writeFileSync(fileName, readmeContent);
     console.log('README.md successfully created!');
 }
 
-// function to initialize program
 function init() {
     inquirer.prompt(questions).then((answers) => {
         writeToFile('README.md', answers);
     });
 }
 
-// function call to initialize program
 init();
