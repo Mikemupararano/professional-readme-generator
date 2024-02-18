@@ -104,6 +104,16 @@ const questions = [{
             }
             return true;
         }
+    },
+    {
+        type: 'input',
+        message: 'What is your email address?',
+        name: 'email',
+        validate: function(email)
+        {
+            // Regex mail check (return true if valid mail)
+            return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(email);
+        }
     }
 ];
 
@@ -137,7 +147,7 @@ ${answers.contributing}
 ${answers.tests}
 
 ## Questions
-${answers.questions}
+${answers.questions}, ${answers.email}
 `;
     // Write content to README.md file
     fs.writeFileSync(fileName, readmeContent);
