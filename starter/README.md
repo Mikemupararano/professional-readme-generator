@@ -14,7 +14,7 @@ The user is advised to have downloaded and installed node.js from here: https://
 The user is advised to have downloaded and installed node.js from here: https://nodejs.org/en/download/
 
 ## License
-Refer to this repository to access the MIT license. 
+MIT license- see repository. 
 
 ## Contributing
 (1) Mike Thomas
@@ -26,11 +26,9 @@ Refer to this repository to access the MIT license.
 (7) https://www.youtube.com/watch?v=9YivEQFpmHQ
 
 ## Usage 
-A screenshot of the work, including the prototype that I used to build this current work is shown here:
-![A screenshot of the prototype that was used to inform how this work should be completed is here:](./assets/prototype.png)
-![A screenshot of the application that requests the length of password:](./assets/password-length.png)
-![A screenshot of a prompt:](./assets/lowercase-prompt.png)
-![A screenshot of the project is here:](./assets/password-generator.png)
+A screenshot of the work, including the prototype that I used to build this current work is shown here.
+A screenshot of the generated readme:
+![A screenshot of the generated readme:](./utils/test/images/Screenshot1.png)
 
 
 ## Credits
@@ -46,9 +44,9 @@ N/A
 
 ## Contributing
 
-As indicated in the description above, I have not included password storage facilities in this work. I would encourage collaboration to improve this web application so that it can store the passwords that are generated. Here is the link for any collaborations on this important matter:
-https://github.com/Mikemupararano/random-password-generator
-The work is published on: https://mikemupararano.github.io/random-password-generator/
+I would encourage collaboration to improve this web application. Here is the link for any collaborations on this important matter:
+https://github.com/Mikemupararano/professional-readme-generator
+
 
 ## Tests
 
