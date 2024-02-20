@@ -39,7 +39,7 @@ The inquirer package handles the questions and the user’s input answers.
 node index.js
 •	The application can be found on this repository link: https://github.com/Mikemupararano/professional-readme-generator
 A screenshot of the app is shown here:
-![A screenshot :](./utils/test/images/Screenshot1.png)
+![A screenshot :](./starter/utils/test/images/Screenshot1.png)
 
 ## License
 This application is covered under the MIT license.
