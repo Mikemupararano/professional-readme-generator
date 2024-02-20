@@ -40,6 +40,7 @@ node index.js
 •	The application can be found on this repository link: https://github.com/Mikemupararano/professional-readme-generator
 A screenshot of the app is shown here:
 ![A screenshot :](./starter/utils/test/images/Screenshot1.png)
+The generated README will appear in the 'starter' folder.
 
 ## License
 This application is covered under the MIT license.
