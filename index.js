@@ -46,7 +46,7 @@ function init() {
                 if (answer.trim() === "") {
                     return "Please enter valid usage instructions";
                 }
-                return true;
+                return true;noo
             }
         },
         {
