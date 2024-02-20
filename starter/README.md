@@ -1,10 +1,10 @@
 
-# This web application generates a reame from  user         input.
+# Professional Readme Generator
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-This web app genrates a readme from user input.
+This web app will generate a readme using user input.
 
 ## Table of Contents
 - [Installation](#installation)
@@ -24,7 +24,7 @@ N/A
 This application is covered under the MIT license.
 
 ## Contributing
-Email the author.
+N/A
 
 ## Tests
 N/A

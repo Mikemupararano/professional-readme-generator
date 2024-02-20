@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-This web app will generate a a    a reareadme using user input.
+This web app will generate a readme using user input.
 
 ## Table of Contents
 - [Professional Readme Generator](#professional-readme-generator)
