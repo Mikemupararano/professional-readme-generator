@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
-The web app is designed to generate a readme using input from the user.
+This web app will generate a readme when the user answers some input questions.
 
 ## Table of Contents
 - [Installation](#installation)
